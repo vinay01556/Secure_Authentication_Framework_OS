@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Authentication Framework</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Operating System Security Console</p>
+        <h1>Secure Authentication Framework</h1>
+        <p class="hero-copy">
+          A system dashboard for identity verification, password enforcement, MFA onboarding, and unauthorized access protection.
+        </p>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <span class="metric-label">Protected Accounts</span>
+          <strong id="protectedAccounts">01</strong>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Security Score</span>
+          <strong id="securityScore">82%</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel auth-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-tag">Authentication</p>
+            <h2>OS Sign-In Simulation</h2>
+          </div>
+          <span class="status-pill" id="accessStatus">Monitoring</span>
+        </div>
+
+        <form id="authForm" class="form-grid">
+          <label>
+            Username
+            <input id="username" name="username" type="text" placeholder="Enter OS username" required>
+          </label>
+          <label>
+            Password
+            <input id="password" name="password" type="password" placeholder="Enter secure password" required>
+          </label>
+          <label>
+            MFA Method
+            <select id="mfaMethod" name="mfaMethod">
+              <option value="Authenticator App">Authenticator App</option>
+              <option value="Hardware Key">Hardware Key</option>
+              <option value="Biometric + OTP">Biometric + OTP</option>
+              <option value="SMS OTP">SMS OTP</option>
+            </select>
+          </label>
+          <label>
+            OTP / Approval Code
+            <input id="otp" name="otp" type="text" maxlength="6" placeholder="6-digit code" required>
+          </label>
+          <label>
+            Device Trust
+            <select id="deviceTrust" name="deviceTrust">
+              <option value="Trusted">Trusted Device</option>
+              <option value="Restricted">Restricted Device</option>
+              <option value="Guest">Guest Device</option>
+            </select>
+          </label>
+          <label>
+            Access Location
+            <input id="location" name="location" type="text" placeholder="e.g. Kolkata, India" required>
+          </label>
+          <div class="toggle-row">
+            <label class="toggle">
+              <input id="privilegedAccess" name="privilegedAccess" type="checkbox">
+              <span>Privileged admin session</span>
+            </label>
+            <label class="toggle">
+              <input id="rememberDevice" name="rememberDevice" type="checkbox">
+              <span>Remember trusted device</span>
+            </label>
+          </div>
+          <button class="primary-btn" type="submit">Validate Access</button>
+        </form>
+
+        <div class="result-card" id="resultCard">
+          <h3>Awaiting input</h3>
+          <p>Enter account credentials and security context to test the sign-in workflow.</p>
+        </div>
+      </section>
+
+      <section class="panel policy-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-tag">Policy Engine</p>
+            <h2>Password and MFA Baseline</h2>
+          </div>
+        </div>
+
+        <form id="policyForm" class="policy-grid">
+          <label>
+            Minimum Length
+            <input id="minLength" type="range" min="8" max="20" value="12">
+            <span class="range-value" id="minLengthValue">12 characters</span>
+          </label>
+          <label>
+            Rotation Period
+            <select id="rotationPeriod">
+              <option value="30">30 days</option>
+              <option value="60">60 days</option>
+              <option value="90" selected>90 days</option>
+              <option value="180">180 days</option>
+            </select>
+          </label>
+          <label class="toggle">
+            <input id="requireSpecial" type="checkbox" checked>
+            <span>Require special characters</span>
+          </label>
+          <label class="toggle">
+            <input id="requireNumbers" type="checkbox" checked>
+            <span>Require numeric values</span>
+          </label>
+          <label class="toggle">
+            <input id="requireUppercase" type="checkbox" checked>
+            <span>Require uppercase letters</span>
+          </label>
+          <label class="toggle">
+            <input id="geoFence" type="checkbox" checked>
+            <span>Enable geolocation anomaly blocking</span>
+          </label>
+        </form>
+
+        <div class="policy-summary" id="policySummary"></div>
+      </section>
+
+      <section class="panel activity-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="section-tag">Protection</p>
+            <h2>Unauthorized Access Shield</h2>
+          </div>
+        </div>
+        <div class="shield-grid">
+          <article class="shield-card">
+            <span class="shield-title">Brute-Force Lockout</span>
+            <strong id="lockoutThreshold">5 attempts</strong>
+            <p>Accounts are isolated after repeated failures and routed to re-verification.</p>
+          </article>
+          <article class="shield-card">
+            <span class="shield-title">Session Monitoring</span>
+            <strong>Real-time</strong>
+            <p>New device, location, and privilege changes trigger contextual step-up authentication.</p>
+          </article>
+          <article class="shield-card">
+            <span class="shield-title">Recovery Mode</span>
+            <strong>Identity verified</strong>
+            <p>Emergency recovery requires secondary proof before any credential reset is approved.</p>
+          </article>
+        </div>
+
+        <div class="log-panel">
+          <div class="log-header">
+            <h3>Audit Trail</h3>
+            <button id="clearLog" class="ghost-btn" type="button">Clear Log</button>
+          </div>
+          <ul id="auditLog" class="audit-log"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
