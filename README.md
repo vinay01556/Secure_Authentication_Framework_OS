@@ -47,11 +47,4 @@ Backend: Python / Java / Node.js
 Database: MySQL / MongoDB
 Authentication: OTP APIs / Biometric (optional)
 
-Project Structure
-secure-authentication-framework-os/
-│── frontend/
-│── backend/
-│── database/
-│── docs/
-│── README.md
 
