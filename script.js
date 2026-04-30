@@ -18,7 +18,7 @@ function nowStamp() {
     year: "numeric",
     month: "short",
     day: "numeric",
-    hour: "2-digit",
+    hour: "1-digit",
     minute: "2-digit"
   });
 }
