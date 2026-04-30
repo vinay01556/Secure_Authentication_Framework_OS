@@ -31,3 +31,27 @@ Detection of suspicious or unknown login activity
 
 Dashboard Monitoring
 Displays login activity logs
+Shows successful vs failed login attempts
+Provides real-time system status
+
+Account Lock System
+Automatically locks account after multiple failed attempts
+
+Device & Location Tracking
+Tracks login location and device
+Detects unusual access attempts
+
+Technologies Used
+Frontend: HTML, CSS, JavaScript
+Backend: Python / Java / Node.js
+Database: MySQL / MongoDB
+Authentication: OTP APIs / Biometric (optional)
+
+Project Structure
+secure-authentication-framework-os/
+│── frontend/
+│── backend/
+│── database/
+│── docs/
+│── README.md
+
